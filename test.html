@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Post with Upvote/Downvote and Comment Section</title>
+  <style>
+    /* Styling for the post */
+    .post {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    /* Styling for the voting buttons */
+    .vote {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    /* Styling for the comments section */
+    .comments {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    /* Styling for the comment form */
+    form {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <h2>Example Post</h2>
+    <div class="vote">
+      <button class="upvote">Upvote</button>
+      <span class="count">0</span>
+      <button class="downvote">Downvote</button>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in arcu ut nulla aliquet feugiat vel ut mi. Pellentesque rhoncus, urna at semper aliquam, quam ante efficitur turpis, vel viverra velit elit eget justo. Duis sed libero vel sem sodales malesuada id at ipsum. Donec in efficitur metus, quis tempor nisi. Fusce rutrum leo eu orci blandit, at efficitur ex dictum.</p>
+  </div>
+  
+  <div class="comments">
+    <h3>Comments</h3>
+    <ul>
+      <li>Comment 1</li>
+      <li>Comment 2</li>
+      <li>Comment 3</li>
+    </ul>
+    <form>
+      <label for="comment">Leave a comment:</label><br>
+      <textarea id="comment" name="comment"></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    // Get the vote count element
+    const countElement = document.querySelector('.count');
+
+    // Get the upvote and downvote buttons
+    const upvoteButton = document.querySelector('.upvote');
+    const downvoteButton = document.querySelector('.downvote');
+
+    // Set the initial vote count
+    let count = 0;
+
+    // Handle upvote button click
+    upvoteButton.addEventListener('click', function() {
+      count++;
+      countElement.textContent = count;
+    });
+
+    // Handle downvote button click
+    downvoteButton.addEventListener('click', function() {
+      count--;
+      countElement.textContent = count;
+    });
+  </script>
+</body>
+</html>
